@@ -2,9 +2,11 @@
 
 <h3>My Posts</h3>
 <% for post in @posts %>
+  <% if current_user && post.user_id == current_user.id %>
   <h4><%= post["title"] %></h4>
   <h6><%= post["posted_on"] %></h6>
   <p><%= post["description"] %></p>
+  <% end %>
 <% end %>
 
 <p>
