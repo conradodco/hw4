@@ -16,7 +16,7 @@
         <a class="navbar-brand" href="/">My Travel Diary</a>
         <span class="navbar-text">
           <% if @current_user %>
-            <%= @current_user["first_name"] %>
+            <%= @current_user["username"] %>
             <a href="/logout">Logout</a>
           <% else %>
             <a href="/login">Login</a> | <a href="/users/new">Signup</a>
