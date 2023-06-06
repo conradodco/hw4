@@ -10,7 +10,12 @@ class PlacesController < ApplicationController
   end
 
   def new
-    @place = Place.new
+    if current_user
+      @place = Place.new
+    else
+      flash[:notice] = "Please log in to create a place."
+      redirect_to "/login"
+    end
   end
 
   def create
