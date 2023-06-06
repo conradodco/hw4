@@ -16,7 +16,6 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :description, :posted_on, :place_id)
    end
 
-
   def create
     @post = current_user.posts.new(post_params)
 
