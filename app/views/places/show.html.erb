@@ -10,6 +10,13 @@
           <div class="card-body">
             <h4 class="card-title"><%= post["title"] %></h4>
             <h6 class="card-subtitle mb-2"><%= post["posted_on"] %></h6>
+
+          <% if post.uploaded_image.attached? %>
+            <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+            <% else %>
+            <img src="<%= post["image"] %>" class="img-fluid">
+          <% end %>
+
             <p class="card-text"><%= post["description"] %></p>
           </div>
         </div>

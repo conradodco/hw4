@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-
+    @post.uploaded_image.attach(params["post"]["uploaded_image"])
     if @post.save
       redirect_to place_path(@post.place_id)
     else

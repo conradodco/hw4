@@ -14,7 +14,13 @@
     <%= form.label "posted_on", :class => "form-label" %>
     <%= form.date_field "posted_on", :class => "form-control" %>
   </p>
+
   <p>
-    <%= form.submit "Add Post", :class => "btn btn-primary" %>
+    <%= form.label "uploaded_image", :class => "form-label" %>
+    <%= form.file_field "uploaded_image", :accept => "image/png,image/jpg,image/jpeg,image/gif", :class => "form-control" %>
+  </p>
+
+  <p>
+    <%= form.submit "Create Post", :class => "btn btn-primary" %>
   </p>
 <% end %>
