@@ -1,6 +1,5 @@
 <h2>Places</h2>
 
-<% if current_user %>
   <ul>
     <% for place in @places %>
       <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
@@ -10,9 +9,3 @@
   <p>
    <a class="btn btn-primary" href="/places/new" role="button">Add New Place</a>
   </p>
-
-<% else %>
-  <div class="message-box">
-    <p>Please log in to view the list of places and/or create new places and posts.</p>
-  </div>
-<% end %>
