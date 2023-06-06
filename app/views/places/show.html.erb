@@ -1,13 +1,22 @@
 <h1><%= @place["name"] %></h1>
 
 <h3>My Posts</h3>
-<% for post in @posts %>
-  <% if current_user && post.user_id == current_user.id %>
-  <h4><%= post["title"] %></h4>
-  <h6><%= post["posted_on"] %></h6>
-  <p><%= post["description"] %></p>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <% if current_user && post.user_id == current_user.id %>
+      <div class="col-lg-4 col-md-6">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title"><%= post["title"] %></h4>
+            <h6 class="card-subtitle mb-2"><%= post["posted_on"] %></h6>
+            <p class="card-text"><%= post["description"] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <p>
   <a href="/posts/new?place_id=<%= @place["id"] %>">Add New Post</a>
